@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document ready</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box" style="background-color: red; width: 500px; height: 500px;">
+        box-text
+    </div>
+
+    <script>
+        // With jQuery
+        $(document).ready(function() {
+            /* Do things after DOM has fully loaded */
+        });
+
+        // Without jQuery
+        // Define a convenience method and use it
+        var ready = (callback) => {
+            if (document.readyState != 'loading') callback();
+            else document.addEventListener('DOMContentLoaded', callback);
+        }
+
+        ready(() => {
+            /* Do thing after DOM has fully loaded */
+        });
+        
+    </script>
+</body>
+</html>

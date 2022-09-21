@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>arr.map</title>
+</head>
+<body>
+    <pre>
+        arr.map(function(item) {
+            // transform
+            return newValue;
+        });
+    </pre>
+    
+    <script>
+        // array.map
+        var numbers = [ 1,2,3,4 ];
+        var squredNumbers = numbers.map(function(x) {
+            return x * x;
+        })
+
+        console.log( squredNumbers );
+
+        // bai tap:
+        var rectangles = [
+            { width: 10, height: 5 },
+            { width: 10, height: 20 },
+            { width: 4, height: 16 }
+        ];
+
+        // dung map method de bien doi rectangles thanh 1 array moi bao gom co dien tich cua cac hinh tren.
+
+        var transformer = rectangles.map(function( num ) {
+            return num.width * num.height;
+        });     
+
+        console.log( transformer ); 
+
+    </script>
+
+</body>
+</html>

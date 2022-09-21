@@ -1,0 +1,20 @@
+<a href="https://love2dev.com/blog/javascript-not-operator/">  https://love2dev.com/blog/javascript-not-operator/ </a>
+<pre>
+    Create Real Booleans Using a !! Double Negative (not)
+    The single ! converts a value to its truthy or falsey value, which is technically a boolean. But if you need to a real boolean representation of a value for your expression you must convert it to a real boolean value using a double not, !!.
+    
+    In reality you are converting a value to a boolean primative, not just its truthy|falsey value.
+    
+    Some say the way to remember this trick is, “bang bang, you’re boolean”.
+    
+    A little geek play on words.
+    
+    This is where a double not is your friend. And it also makes you look like a rock start programmer.
+    
+     if(!!0){ // evaluates to false //this will not execute } 
+    But that is not much different than the original example. I know, but at the same time, would you ever use a hard coded value as an if conditional?
+    
+    No, you would use a variable.
+    
+     let v = 0; v ? true : false //equals false !v ? true : false //equals true !!v //false v = 1; v ? true : false //equals true !v ? true : false //equals false !!v //true typeof !!v // boolean 
+</pre>

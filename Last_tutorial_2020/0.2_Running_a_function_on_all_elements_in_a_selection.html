@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running a function on all elements in a selection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div class="box">box 1</div>
+    <div class="box">box 2</div>
+    <div class="box">box 3</div>
+    <div class="box">box 4</div>
+
+
+    <script>
+
+        // with jQuery
+        // Hide all instances of .box
+
+        // $('.box').hide();
+
+        // Without jQuery
+        // Iterate over the nodelist of elements to hide all instances of .box
+        document.querySelectorAll('.box').forEach( box => {
+            box.style.display = "none";
+        });
+
+    </script>
+</body>
+</html>

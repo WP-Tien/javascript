@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ung dung arr trong thuc te</title>
+</head>
+<body>
+    
+    <select name="" id="genderFilter">
+        <option value="all"> All </option>
+        <option value="male"> Male </option>
+        <option value="female"> Female </option>
+    </select>
+    <div id="userList">
+        <li>No data</li>
+    </div>
+
+    <script>
+
+    var users = [
+        { name: 'Tom', gender: 'male' },
+        { name: 'Maria', gender: 'female' },
+        { name: 'Jason', gender: 'male' },
+        { name: 'Sora', gender: 'female' },
+        { name: 'Tien', gender: 'male' }
+    ];
+
+    var userList = document.getElementById('userList');
+    var genderFilter = document.getElementById('genderFilter');
+    var options = Array.from( genderFilter.children );
+
+        console.log( options );
+
+    render( userList, users );
+
+    genderFilter.addEventListener( 'change', function ( e ) {
+
+        var value =  e.target.value;
+
+        var filterUser = users.filter( function (user) {
+            return user.gender === value;
+        })
+
+        render( userList, filterUser  );
+
+    });
+
+    function render( container, items ) {
+
+        var htmlItems = items.map( function( item ) {
+            return `<li> ${ item.name } </li>`;
+        });
+
+        var html = htmlItems.join('');
+
+        container.innerHTML = html;
+
+    }
+
+    </script>
+</body>
+</html>

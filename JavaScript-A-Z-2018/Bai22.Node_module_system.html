@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Node module system</title>
+</head>
+<body>
+    <pre>
+        Không dùng node module ( module.exports ) mà tôi ghi tựa Node module system :v
+    </pre>
+    <script type='module'>
+        import * as mouse from './modules/mouse.js';
+
+        function Cat() {
+            this.stomach = [];
+        }
+
+        Cat.prototype.eat = function(mouse) {
+            this.stomach.push(mouse);
+            mouse.die();
+        }
+
+        var mickey = new mouse.Mouse('Black');
+        var jerry = new mouse.Mouse('Orange');
+
+        console.log( mickey );
+        console.log( jerry );
+
+        var tom = new Cat();
+        tom.eat( mickey );
+        tom.eat( jerry );
+        console.log( tom );
+    </script>
+</body>
+</html>

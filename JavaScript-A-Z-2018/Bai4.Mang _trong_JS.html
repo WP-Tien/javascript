@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mang trong JS</title>
+</head>
+<body>
+    <pre>
+        terms: array, element, index, length;
+
+        var evenNumbers = [2,4,6];
+
+        index   -> 0   1   2   3
+        value   -> 2   4   6   8
+                   ------:------
+        length  ->       4
+
+        Nhìn biết chỉ số(index) lớn nhất mảng (length-1) 4 - 1 = 3 :v
+        Xem cái arr like obj cũng hay lắm :v
+    </pre>
+    <script>
+        
+        var dog1 =  {
+            type: 'chó ta'
+        };
+
+        var dog2 = {
+            type: 'lạp xưởng'
+        };
+
+        var dog3 = {
+            type: 'husky'
+        };
+
+        var bunchofDogs = [ dog1, dog2, dog3 ];
+
+        // console.log( bunchofDogs ); // có length là 3 -> bunchofDogs.length là ra 3 :v 
+        // truy xuất husky bằng cách:
+        // console.log( bunchofDogs[2].type );
+
+
+        // create one more dog
+        var dog4 = {
+            type: 'shiba'
+        };
+
+        bunchofDogs[0] = dog4;
+
+        console.log( bunchofDogs );
+
+        // list danh sách các phần tử giống nhau
+        // điện thoại -> Contacts 
+        var contacts =  [
+            {
+                name: 'Tiến',
+                phone: '0707768350'
+            }, 
+            {
+                name: 'Thái',
+                phone: '123857439'
+            }
+        ];
+    </script>
+</body>
+</html>

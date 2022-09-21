@@ -1,0 +1,26 @@
+<a href="https://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/">https://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>  
+    <div class="box">
+        Elementor
+    </div>
+
+    <script>
+        // jQuery, select all instances of .box
+        console.log ( $(".box") );
+    
+        // Instead, select the first instance of .box
+        console.log( document.querySelector('.box') );
+        
+        // ... or select all instances of .box
+        console.log( document.querySelectorAll('.box') );
+    </script>
+</body>
+</html>

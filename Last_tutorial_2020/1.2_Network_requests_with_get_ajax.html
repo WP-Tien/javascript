@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Network requests with .get() or .ajax() </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <pre>
+        fetch() lets you create network requests in a similar fashion to jQuery’s ajax() and get() methods. fetch() takes a URL as an argument, and returns a Promise that you can use to handle the response:
+    </pre>
+
+    <script>
+        // With jQuery
+        $.ajax({
+            url: "data.json"
+        }).done({
+            // ...
+        }).fail( function(){
+            // handle error ...
+        });
+
+        $.ajax({
+            type: "POST",
+            url: ajax_object,
+            data: {
+                action: "update_product_flash_sale",
+                product_id: $product_id,
+                value: $value,
+                nonce: $nonce
+            },
+            success: function (response) {
+                // console.log(response);
+            }
+        });
+
+        // Without jQuery
+        fetch("data.json")
+        .then(data => {
+            // Handle data
+        }).catch(error => {
+            // Handle error
+        });        
+    </script>
+</body>
+</html>

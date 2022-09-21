@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with classes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .box {
+            background-color: green !important;
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        You can easily access and work with classes through the classList property to toggle, replace, add, and remove classes:
+    </pre>
+
+    <div class="box" style="width: 200px; height: 200px; background-color: red;">
+    </div>
+
+    <script>
+        // With jQuery
+        // Add, remove, add the toggle the 'focus' class
+        // $('.box').addClass('focus');
+        // $('.box').removeClass('focus');
+        // $('.box').toggleClass('focus');
+
+        // Without jQuery
+        // Add, remove, and the toggle the "focus" class
+        // var box = document.querySelector('.box');
+
+        // box.classList.add('focus');
+        // box.classList.remove('focus');
+        // box.classList.toggle('focus');    
+    </script>
+
+    <pre>
+        If you want to remove or add multiple classes you can just pass multiple arguments to .add() and .remove():
+    </pre>
+    <script>
+        // Add "focus" and "highlighted" classes, and then remove them
+        var box = document.querySelector('.box');
+
+        box.classList.add('focus', 'highlighted');
+        // box.classList.remove('focus', 'highlighted');
+    </script>
+
+    <pre>
+        Checking if an element has a class     
+        If you only want to run a function depending on if an element has a certain class, you can replace jQuery’s .hasClass() with .classList.contains():   
+    </pre>
+    <script>
+        // With jQuery
+        // Check if .box has a class of 'focus', and do something.
+        if($('.box').hasClass('focus')) {
+            // Do something ...
+            console.log('Had class focus');
+        }
+
+        // Without jQuery
+        // Check if .box has a class of 'focus', and do something.
+        if( document.querySelector('.box').classList.contains('focus') ) {
+            // Do something ...
+            console.log('Had class focus');
+        }
+    </script>
+</body>
+</html>
