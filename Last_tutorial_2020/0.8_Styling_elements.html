@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Styling elements </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box" style="width: 150px; height: 150px; background-color: red;">
+        box text
+    </div>
+
+    <script>
+        // With jQuery
+        // Select .box and change text color to #fff
+        // $(".box").css("color", "#fff");
+
+        // Without jQuery
+        // Select the first .box and change its text color to #fff
+        // document.querySelector(".box").style.color = "#fff";
+
+
+        // With jQuery
+        // many properties at once 
+        // In JS you can set the values one at a time, opr set the entire style string:
+        // $(".box").css({
+        //     "color" : "#fff",
+        //     "background-color" : "blue"
+        // });
+
+        // Without jQuery
+        // Set color to #000 and background to red
+        var box = document.querySelector(".box");
+        // box.style.color = "#fff";
+        // box.style.backgroundColor = "brown";
+
+        // Set all styles at once ( and override any existing styles)
+        box.style.cssText = "color: #fff; background-color: green";
+
+    </script>
+</body>
+</html>

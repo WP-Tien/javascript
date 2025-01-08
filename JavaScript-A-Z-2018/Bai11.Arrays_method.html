@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array methods</title>
+</head>
+<body>
+    
+    <pre>
+
+        Các method của array: 
+        a.concat(b)
+        a.push(b)
+        a.pop()
+        a.shift()
+        a.unshift()
+
+        Tự đọc trên MDN ( Mozilla Developer Network )
+        Google keyword: array methods
+        a.slice
+        a.splice
+
+    </pre>
+    <script>
+        var a = [ 10, 2, 3 ];
+        var b = [ 10, 20 ];
+
+        // var c = a.concat(b);
+        // console.log( c );
+
+        // vào ra length
+        // ra lấy ra phần tử
+        // mảng a ban đầu thay đổi 
+
+        console.log( 'PUSH' );
+        var lengthArr = a.push(b); // length.arr
+        console.log( 'Độ dài mảng: ' + lengthArr );
+        console.log( 'Mảng a hiện tại: ', a );
+
+        console.log( 'POP' );
+        var arrPop = a.pop();
+        console.log( 'Phần tử bị lấy ra cuối mảng: ', arrPop );
+        console.log( 'Mảng a hiện tại: ', a );
+
+        console.log( 'SHIFT' );
+        var lengthShift = a.shift();
+        console.log( 'Phần tử bị lấy ra đầu mảng: ' + lengthShift ); // giá trị lấy ra được
+        console.log( 'Mảng a hiện tại: ', a );
+
+        console.log( 'UNSHIFT' );
+        var uns = a.unshift( 3 ); // length
+        console.log( 'Độ dài mảng: ' + uns ); // length
+        console.log( 'Mảng a hiện tại: ', a ); // new arr
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Triggering and creating events </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <pre>
+        The equivalent to manually triggering events with trigger() can be achieved by calling dispatchEvent(). The dispatchEvent() method can be invoked on any element, and takes an Event as the first argument:
+    </pre>
+
+    <div id="foo" class="box">
+        Foo
+    </div>
+
+    <script>
+    // With jQuery
+    // Trigger myEvent on document and .box
+    // $('#foo').on("click",  function() {
+    //     alert( $(this).text() );
+    // });
+    // $('#foo').trigger("click"); // Kich  hoat click event = trigger
+
+    // $("#foo").on( "custom", function( event, param1, param2) {
+    //     alert( param1 + "\n" + param2);
+    // });
+    // $("#foo").trigger('custom', ['custom', 'text']);
+
+    // Without jQuery
+    // Create and dispatch myEvent
+    // Listen for the event
+    window.addEventListener("MyEventType", function(evt) {
+        alert(evt.detail);
+    }, false);
+
+    // Dispatch an event
+    var evt = new CustomEvent("MyEventType", {detail: "Any Object Here"});
+    window.dispatchEvent(evt);
+
+    </script>
+</body>
+</html>

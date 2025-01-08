@@ -1,0 +1,42 @@
+<meta charset="UTF-8"> 
+
+<pre>
+    <b> Without jQuery. </b>
+</pre>
+
+<div id="test">
+    Example DIV element.
+</div>
+
+<script>
+    //  Attempt to get the element using document.getElementById
+    var element = document.getElementById("test");
+
+    // To check/test this out
+    var ele = document.getElementById("ele-does-not-exist");
+    console.log( ele );
+
+    // If it isn't "undefined" and it is not "null", then it exists.
+    if( typeof(element) != 'undefined' && element != null ) {
+        alert('Element exist!');
+    } else {
+        alert('Element does not exist!');
+    }
+</script>
+
+<pre>
+    <b> Node element </b>
+</pre>
+
+<div id="test-2">
+    Example DIV 2 element.
+</div>
+
+<script>
+    // Using document.body.contains.
+    if( document.body.contains( document.getElementById('test-2') ) ) {
+        alert('Element exists !');
+    } else {
+        alert('Element does not exist!');
+    }
+</script>

@@ -1,0 +1,95 @@
+<meta charset="UTF-8"></meta>
+<a href="https://www.geeksforgeeks.org/javascript-check-if-element-exists-in-the-visible-dom/">https://www.geeksforgeeks.org/javascript-check-if-element-exists-in-the-visible-dom/</a>
+<pre>
+    <b>Check if element exists in the visible DOM</b>
+
+    Example-1: In this example, the element is searched by <b>document.getElementById('Id')</b> and <b>!!</b> is used before selector to get the boolean result. 
+</pre>
+
+<div style="text-align:center;"
+      id="body"> 
+    <h1 style="color:green;">   
+            GeeksForGeeks   
+        </h1> 
+    <p id="GFG_UP" 
+       style="font-size: 15px; 
+              font-weight: bold;">
+      Check if an Element exists in visible DOM 
+    </p>
+    <button onclick="gfg_Run()"> 
+        check 
+    </button>
+    <p id="GFG_DOWN" 
+       style="color:green;  
+              font-size: 23px; 
+              font-weight: bold;"> 
+    </p> 
+</div> 
+
+<script>
+    var el_down =  
+        document.getElementById("GFG_DOWN"); 
+    var id = 'GFG_UP'; 
+
+    function gfg_Run() { 
+        var element = 
+            !!document.getElementById(id); 
+        var ans = ''; 
+
+        if (element) {
+            ans = "Element of id = '" + id +  
+              "' exists in visible DOM."; 
+        } else { 
+            ans = "Element of id = '" + id +  
+              "' not exists in visible DOM."; 
+        } 
+
+        el_down.innerHTML = ans; 
+    } 
+</script> 
+
+<pre>
+    Example-2: In this example, the element is searched by <b>document.getElementByClassName('className')</b> and <b>length property</b> is used to check whether variable contains results or not.
+</pre>
+    <div style="text-align:center;" 
+      id="body"> 
+    <h1 style="color:green;">   
+            GeeksForGeeks   
+        </h1> 
+    <p id="GFG_UP" 
+       class="p" 
+       style="font-size: 15px;  
+              font-weight: bold;">  
+      Check if an Element exists in visible DOM 
+    </p> 
+    <button onclick="gfg_Run()"> 
+        check 
+    </button> 
+    <p id="GFG_DOWN2"
+       class="p"
+       style="color:green;  
+              font-size: 23px; 
+              font-weight: bold;"> 
+    </p> 
+    <script> 
+        var el_down =  
+            document.getElementById("GFG_DOWN2"); 
+        var className = 'p'; 
+  
+        function gfg_Run() { 
+            var element =  
+                document.getElementsByClassName(className); 
+            var ans = ''; 
+
+            if (element.length > 0) { 
+                ans = "Element of className = '" + className + 
+                  "' exists in visible DOM."; 
+            } else { 
+                ans = "Element of className = '" + className + 
+                  "' not exists in visible DOM."; 
+            } 
+
+            el_down.innerHTML = ans; 
+        } 
+    </script> 
+</div> 

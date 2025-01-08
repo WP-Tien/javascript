@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <pre>
+        If you want to dynamically create an element in JavaScript to add to the DOM you can call createElement() on document and pass it a tag name to indicate what element you want to create:
+    </pre>
+
+    <script>
+        // Create a div & span
+        $("<div/>");
+        $("<span/>");
+
+        // Create a div and a span
+        document.createElement("div");
+        document.createElement("span");
+    </script>
+
+    <pre>
+        If you want to add some content to those elements, you can simply set the textContent property, or create a text node with createTextNode and append it to the element:
+    </pre>
+
+    <script>
+        var element = document.createElement("div");
+        element.textContent = 'text';
+
+        // or create a textNode and append it 
+        var text = document.createTextNode('Text');
+        element.appendChild(text);
+    </script>
+</body>
+</html>

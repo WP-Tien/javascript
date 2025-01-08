@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callback</title>
+</head>
+<body>
+
+    <pre>
+        Function as a parameter (callback).
+        Dùng function như một tham số.
+    </pre>
+    <script>
+
+        var coffeeMachine = {
+            // call back function
+            makeCoffee: function( onFinish ) {
+                console.log('Make a coffee ....');
+                onFinish();
+            }   
+        }
+
+        var beep = function() {
+            console.log( 'Tít tít' );
+        }
+        coffeeMachine.makeCoffee( beep );
+
+        // call back
+        coffeeMachine.makeCoffee(function() {
+            console.log( 'Bíp Bíp' );
+        })
+
+    </script>
+
+</body>
+</html>

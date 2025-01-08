@@ -1,0 +1,38 @@
+<!-- 
+    Asynchronous code is executed after a task that runs in the "background" finishes;
+    Asynchronous code is non-blocking (không chặn)
+    Execution doesn't wait for an asynchronous task to finish its work;
+
+    Thread of
+    Execution
+    [code]
+    [code]
+    [code] // red
+    [ Waiting-code runned after all other code ] //This task runned in the background
+-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+ </head>
+ <body>
+    <p class="p"></p>
+
+    <script>
+        const p = document.querySelector('.p');
+        setTimeout( () => {
+            p.textContent = 'My name is Vincent';
+        }, 5000);
+
+        p.style.color = 'red';
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        [1, 2, 3].map( v => v * 2); // <=== Callback does NOT automatically make code asynchronous!
+
+        
+    </script>
+ </body>
+ </html>

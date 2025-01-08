@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>If else</title>
+</head>
+<body>
+    
+    <pre>
+        syntax 
+
+        if ( condition ) {
+            statement when true;
+        } else {
+            statement when false;
+        }
+
+    </pre>
+    <script>
+        function tossCoin() {
+            var value = Math.random();
+            if ( value < 0.5 ) {
+                console.log( 'Mặt sấp' );
+            } else {
+                console.log( 'Mặt ngửa' );
+            }
+        }
+
+        tossCoin();
+
+
+        var bills = [
+            { value: 10000, fake: false }, 
+            { value: 20000, fake: false },
+            { value: 20000, fake: true },
+            { value: 500000, fake: false }
+        ];
+
+        function countBills(bills) {
+            var totals = bills.filter( a => { 
+
+                return a.fake == false;
+
+            }).reduce( (a,b) => {
+
+                return a + b.value;
+
+            }, 0);
+
+            return totals;
+        }
+
+
+        console.log( countBills(bills) );
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updating DOM</title>
+</head>
+<body>
+    
+    <pre>
+        If you’re looking to change the text of an element or to add new elements to the DOM chances are that you’ve come across innerHTML(), but using it may expose you to cross-site scripting (XSS) attacks. Although you can work around it and sanitize the HTML, there are some safer alternatives.
+
+        If you’re only looking to read or update the text of an element, you can use the textContent property of an object to return the current text, or update it:
+    </pre>
+
+    <script>
+        // With jQuery
+        // Updating the text  of a .button
+        $('.button').text('New text');
+        // Read the text of a .button
+        $(".button").text(); // Returns "New text"
+
+        // Without jQuery
+        // Update the text of a .button 
+        document.querySelector('.button').textContent = 'New text';
+        document.querySelector('.button').textContent; // Return "New text" 
+    </script>
+
+    <pre>
+        If you’re constructing a new element, you can then add that element to another element by using the method on the parent appendChild():
+    </pre>
+
+    <script>
+        // Create div element and append it to .container
+        $(".container").append($('<div/>'));
+
+        // Create a div and append it to .container
+        var element = document.createElement('div');
+        document.querySelector('.container').appendChild(element);
+    </script>
+
+    <pre>
+        Put together, here’s how to create a div, update its text and class, and add it to the DOM:
+    </pre>
+
+    <script>
+        // Create a div
+        var element = document.createElement("div");
+
+        // Update its class
+        element.classList.add("box");
+
+        // Set its text
+        element.textContent = "Text inside box";
+
+        // Append the element to .container
+        document.querySelector(".container").appendChild(element);      
+    </script>
+</body>
+</html>

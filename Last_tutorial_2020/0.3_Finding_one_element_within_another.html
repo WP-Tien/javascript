@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding one element within another</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box">
+
+        </div>
+    </div>
+
+    <script>
+        // With jQuery
+        // Select the first instance of .box within .container
+        var container = $(".container");
+        // Later ...
+        console.log( container.find('.box') );
+
+        // Within jQuery
+        // Select the first instance of .box within .container
+        var container = document.querySelector('.container');
+        // Later ...
+        console.log( container.querySelector('.box') );
+   </script>
+</body>
+</html>

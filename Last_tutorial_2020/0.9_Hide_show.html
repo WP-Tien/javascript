@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide and show</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <pre>
+        The .hide() and .show() convenience methods are equivalent to accessing the .style property and setting display to none and block:
+    </pre>
+
+    <div class="box" style="width: 250px; height: 250px; background-color: red">
+
+    </div>
+
+    <script>
+        // With jQuery
+        // Hide and show and element
+        // $('.box').hide();
+        // $('.box').show();
+
+        // Without jQuery
+        // Hide and show an element by changing "display" to block and none
+        document.querySelector('.box').style.display = "none";
+        document.querySelector('.box').style.display = "block";
+    </script>
+
+</body>
+</html>

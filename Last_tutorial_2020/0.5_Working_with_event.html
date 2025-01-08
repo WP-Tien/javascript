@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>
+        Working with events
+    </h2>
+    <pre>
+        There’s a myriad of ways to listen to events in jQuery, but whether you’re using .on(), .bind(), .live or .click(), you’ll make do with the JavaScript equivalent .addEventListener:
+    </pre>
+
+
+    <script>
+        // // With jQuery
+        // $(".button").click(function(e) {
+        //     /* handle click event */
+        // });
+
+        // $('.button').mouseenter(function(e) {
+        //     /* handle click event */
+        // });
+
+        // $(document).keyup(function(e) {
+        //     /* handle key up event */
+        // });
+
+        // // Without jQuery
+        document.querySelector(".button").addEventListener("click", (e) => { /* ... */ });
+        document.querySelector(".button").addEventListener("mouseenter", (e) => { /* ... */ });
+        document.addEventListener("keyup", (e) => { /* ... */ });
+    </script>
+</body>
+</html>

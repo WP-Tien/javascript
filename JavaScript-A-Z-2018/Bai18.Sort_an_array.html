@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort array</title>
+</head>
+<body>
+    
+    <pre>
+        filter, fund, reduce, map 
+        array.sort 
+
+        syntax: array.sort(function( a, b ) {}) -> return a sorted array
+
+        if sort function 
+            returns a value < 0 
+                a will come before b
+            returns a value > 0 
+                a will come after b
+            returns 0 
+                a and b will stay unchanged
+    </pre>
+    <script>
+        var numbers = [ 2, 9, 3, 4, 1 ];
+        // [1, 2, 3, 4, 9] // ascending order
+        var ascendingNumbers = numbers.sort(function( a, b ) {
+            // assume :  a = 1; b = 4;
+            return a - b; 
+        });
+        console.log( ascendingNumbers );
+
+        var descendingNumbers = numbers.sort( function( a, b) {
+            // assume: a = 3, b = 4;
+            return b - a;
+        }); 
+        console.log( descendingNumbers );
+    
+        var employees = [
+            { name: 'Tí', age: 18 },
+            { name: 'Tèo', age: 20 }, 
+            { name: 'Maria', age: 19 }
+        ];
+        console.log( employees );
+
+        var sortedEmployees = employees.sort( function( a, b ) {
+            // a = employee[1], b = employee[2]
+            // expect: a comes after b
+            return a.age - b.age // > 0
+        });
+    </script>
+</body>
+</html>

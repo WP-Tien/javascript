@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arr reduce</title>
+</head>
+<body>
+    
+    <pre>
+        arr.reduce(function(item1, item2) {
+            // be henshin here 
+            return x;
+        })
+    </pre>
+    <script>
+    
+        // arr.reduce 
+        var arr = [ 1, 2, 3, 4 ];    
+        var result = arr.reduce( function(a, b) {
+            return a + b; 
+        });
+
+        console.log( result );
+
+        //  gio hang
+        var orders = [
+            { name: 'A', quantity: 2, unitPrice: 100 },
+            { name: 'B', quantity: 1, unitPrice: 400 },
+            { name: 'C', quantity: 5, unitPrice: 15 }
+        ];
+        // dung reduce de tinh tong cua don hang
+        cartTotal = orders.map( function( item ) {
+
+            return item.unitPrice * item.quantity;
+
+        }).reduce( function( a, b ) {
+
+            return a + b;
+        });
+
+        console.log( cartTotal );
+    
+    </script>
+
+    <pre>
+        + init
+
+        arr.reduce( function( a, b) {
+            return a +b;
+        }, init);
+    </pre>
+    <script>
+    
+        var arr2 = [ 1, 2, 3, 4 ];
+
+        var reduce = arr2.reduce( (a,b) => {
+            console.log( a, b );
+            return a + b;
+        }, 0 );
+        console.log( reduce );
+
+        var products = [
+            { name: 'A', quantity: 2, unitPrice: 10 },
+            { name: 'B', quantity: 3, unitPrice: 20 },
+            { name: 'C', quantity: 4, unitPrice: 30}
+        ];
+
+        // total ?
+        var total = products.reduce( function( currentTotal, nextProduct ) {
+            return currentTotal + nextProduct.quantity * nextProduct.unitPrice;
+        }, 0 );
+        
+        console.log( total );
+
+        // phase 1: 0 + product[0]
+        //          0 + 2 * 10 = 20
+        // phase 2: 20 + product[1]
+        //          20 + 3 * 20 = 80
+        // phase 3: 80 + product[2]
+        //          80 + 4 * 30 = 200
+
+        var items = ['Tom', 'Bill', 'Kim'];
+
+        // use reduce to make this result
+        // '<Tom><Bill><Kim>';
+            // 1. reduce
+        var result2 = items.reduce( function( a, b ){
+            return a + `<${b}>`;
+        }, '' );
+        console.log( result2 );
+            // 2. map và join
+        var result3 = items.map( function( item ) {
+            return `<${item}>`;
+        });
+        var cleanResult3 = result3.join('');
+        console.log( cleanResult3 );
+
+    </script>
+
+</body>
+</html>

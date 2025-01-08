@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objects method</title>
+</head>
+<body>
+    <pre>
+
+        Trong object co mot method duoc goi la Object methods
+
+    </pre>
+
+    <script>
+
+        var myDog = {
+            name: 'Muc',
+            age: 1,
+            weight: 10,
+            bark: function() { // anonymous function 
+                console.log( 'gao gao, my name is: ' + this.name ); // return undefined
+            },
+            eat: function( bone ) {
+                this.weight = this.weight + bone.weight;
+                return this;
+            }
+        }       
+
+        console.log( myDog.bark() );
+
+        // this nay` dang nam` trong global context :D ko có gì để lấy :D
+        function bark() {
+            console.log(  ' ut it, my name is: ' + this.name );
+        }
+
+        console.log( bark() ); // return undefined
+
+        // bone
+        var bone = {
+            weight: 10
+        }
+
+        console.log( bone.weight );
+        console.log( myDog.eat( bone ) );
+
+    </script>
+    
+</body>
+</html>
